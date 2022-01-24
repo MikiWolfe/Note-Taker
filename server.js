@@ -8,13 +8,16 @@ const magenta= "\x1b[35m"
 
 const note = require('./db/db.json');
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/404.html'))
+})
 // Middleware:
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // GET request:
-app.get('*' , (req, res) =>
+app.get('/' , (req, res) =>
     res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
@@ -24,7 +27,6 @@ app.get('/notes' , (req, res) =>
 
 app.get('/api/notes', (req, res) => {
     res.json(note);
-    // res.status(200).json(`${req.method} request received to get notes`)
     console.log(`${req.method} request received to get notes`)
 });
 
@@ -62,6 +64,24 @@ else {
 }
 })
 
+// DELETE request:
+app.get('/api/notes/:id', (req, res) => {
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+    const tipId = req.params.id;
+    readFromFile('./db/db.json')
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+
+        const result = json.filter((id) => id !== tipId);
+
+        writeToFile('./db/db.json', result);
+        res.json(`Note ${tipId} has been deleted`)
+    });
+  });
+
 
 // `DELETE /api/notes/:id` should receive a query parameter that
 //  contains the id of a note to delete. To delete a note, you'll
@@ -69,9 +89,9 @@ else {
 // with the given `id` 
 //  property, and then rewrite the notes to the `db.json` file.
 
-// app.delete('/api/notes/:id', (req, res) =>{  })
+
 
 app.listen(PORT,() =>
-console.log(magenta, `🚀 Listening at http://localhost:${PORT} 🚀`))
+console.log(magenta, `🚀 Listening at http://localhost:${PORT} 🚀`));
 
 

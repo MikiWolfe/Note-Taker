@@ -1,3 +1,22 @@
 [
-
+    {
+        "title": "Tea",
+        "text": "Today I had mint tea and it was TEA-riffic!",
+        "id": "a3086560-ca52-4173-987a-0283fc397811"
+    },
+    {
+        "title": "Good Afternoon",
+        "text": "I went for a walk and red a book. ",
+        "id": "6522728c-1630-42bd-8967-103998002286"
+    },
+    {
+        "title": "Hello",
+        "text": "Hello World",
+        "id": "6842d98a-7faf-4575-8f84-a70ff542adca"
+    },
+    {
+        "title": "Green",
+        "text": "Green is a great color. ",
+        "id": "395ca339-7049-4fab-a79e-a283f074f20e"
+    }
 ]

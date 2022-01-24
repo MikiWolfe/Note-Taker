@@ -4,7 +4,12 @@ body {
   margin: 0;
   padding: 0;
 }
-
+h1{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
 .save-note {
   display: none;
 }
