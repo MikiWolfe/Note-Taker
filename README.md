@@ -43,7 +43,7 @@ Please reach out if you have any questions about this application:
 GitHub profile: https://github.com/MikiWolfe
 
 ### Link to Deployed Site
-Link to the deployed site: *LATER*
+Link to the deployed site: https://mikiwolfe.github.io/Note-Taker/
 Link to the repo: https://github.com/MikiWolfe/Note-Taker
 Link to the Heroku site: https://note-taker99.herokuapp.com/
 
