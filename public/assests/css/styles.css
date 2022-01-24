@@ -81,3 +81,10 @@ h3{
   padding: 20px;
   cursor: pointer;
 }
+
+.img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 400px;
+}
