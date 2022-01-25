@@ -66,16 +66,29 @@ app.get('/api/notes/:id', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
+app.get('/:id', (req, res) => {
+    const tipId = req.params.tip_id;
+    readFromFile('./db/tips.json')
+      .then((data) => JSON.parse(data))
+      .then((json) => {
+        const result = json.filter((tip) => tip.tip_id === tipId);
+        return result.length > 0
+          ? res.json(result)
+          : res.json('No tip with that ID');
+      });
+  });
+  
+
 app.delete('/api/notes/:id', (req, res) => {
-    const tipId = req.params.id;
+    const noteId = req.params.id;
     readFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
         
-        const result = json.filter((id) => id !== tipId);
+        const result = json.filter((id) => id !== noteId);
         
         writeToFile('./db/db.json', result);
-        res.json(`Note ${tipId} has been deleted`)
+        res.json(`Note ${noteId} has been deleted`)
     });
 });
 
