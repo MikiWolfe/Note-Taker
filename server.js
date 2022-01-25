@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3001;
 const magenta= "\x1b[35m"
 
 const note = require('./db/db.json');
+const res = require('express/lib/response');
 
 // Middleware:
 app.use(express.json());
@@ -23,7 +24,7 @@ res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
 app.get('/api/notes', (req, res) => {
-    res.json(note);
+res.sendFile(path.join(__dirname, '/db/db.json'))
     console.log(`${req.method} request received to get notes`)
 });
 
@@ -61,43 +62,43 @@ app.post('/api/notes', (req, res) => {
     }
 })
 
-// DELETE request:
-app.get('/api/notes/:id', (req, res) => {
-    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
-});
 
-app.get('/:id', (req, res) => {
-    const tipId = req.params.tip_id;
-    readFromFile('./db/tips.json')
-      .then((data) => JSON.parse(data))
-      .then((json) => {
-        const result = json.filter((tip) => tip.tip_id === tipId);
-        return result.length > 0
-          ? res.json(result)
-          : res.json('No tip with that ID');
-      });
-  });
+// app.get('/:id', (req, res) => {
+//     const noteId = req.params.id;
+//     readFromFile('./db/db.json')
+//       .then((data) => JSON.parse(data))
+//       .then((json) => {
+//         const result = json.filter((id) => id === noteId);
+//         return result.length > 0
+//           ? res.json(result)
+//           : res.json('Unable to delete this note');
+//       });
+//   });
   
 
 app.delete('/api/notes/:id', (req, res) => {
-    const noteId = req.params.id;
-    readFromFile('./db/db.json')
-    .then((data) => JSON.parse(data))
-    .then((json) => {
-        
-        const result = json.filter((id) => id !== noteId);
-        
-        writeToFile('./db/db.json', result);
-        res.json(`Note ${noteId} has been deleted`)
-    });
+let noteJson = JSON.parse(fs.readFileSync(path.join(__dirname, '/db/db.json')));
+console.log("hello", noteJson)
+console.log("world", req.params.id)
+let noteId = req.params.id
+noteJson.filter(element => element.id === noteId)
+
+
+
+
+
+// This for loop works
+// for (let i = 0; i < noteJson.length; i++) {
+//     if (noteJson[i].id.toString() === noteId) {
+//         noteJson.splice(i, 1 )
+//         console.log("hey", noteJson)
+//     }
+// }
+fs.writeFileSync(path.join(__dirname, '/db/db.json'), JSON.stringify(noteJson))
+res.sendStatus(200)
+
 });
 
-
-// `DELETE /api/notes/:id` should receive a query parameter that
-//  contains the id of a note to delete. To delete a note, you'll
-//  need to read all notes from the `db.json` file, remove the note 
-// with the given `id` 
-//  property, and then rewrite the notes to the `db.json` file.
 
 
 app.get('*', (req, res) => {
