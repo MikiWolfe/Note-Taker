@@ -1,1 +1,32 @@
-[{"title":"Tea","text":"Today I had mint tea and it was TEA-riffic!","id":"a3086560-ca52-4173-987a-0283fc397811"},{"title":"Good morning","text":"Coffee","id":"e23f8d25-dc44-4175-a4d7-5ff46839e837"}]
+[
+    {
+        "title": "It",
+        "text": "Works!",
+        "id": "76d9e302-3466-4b4e-b104-ff69cd8d3446"
+    },
+    {
+        "title": "Hi ",
+        "text": "Purple",
+        "id": "857f9945-475e-4279-acb9-b7437f71b902"
+    },
+    {
+        "title": "purple",
+        "text": "purple",
+        "id": "551e91c2-2e3e-4a67-ad4f-5e61ba55c8c4"
+    },
+    {
+        "title": "Shopping List",
+        "text": "-Pancakes\n-Pizza\n-Milk\n-Eggs\n-Apple",
+        "id": "47acf447-4550-43ff-94ec-f6e176315137"
+    },
+    {
+        "title": "Morning ",
+        "text": "Coffee, breakfast then 9 AM Meeting",
+        "id": "50b4598c-1c83-4ebc-b0dd-840ba65451ff"
+    },
+    {
+        "title": "Tea",
+        "text": "Today I had mint tea and it was TEA-riffic!",
+        "id": "1e4993eb-6e47-4264-b875-3f8d1c9ba094"
+    }
+]

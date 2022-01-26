@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ansi-colors": "^4.1.1",
     "express": "^4.16.4",
     "uuid": "^8.3.2"
   }
