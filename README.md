@@ -47,4 +47,4 @@ Link to the repo: https://github.com/MikiWolfe/Note-Taker
 Link to the Heroku site: https://note-taker99.herokuapp.com/
 
 ### Image of application
-Link to a screenshot of the application: *LATER*
+Link to a screenshot of the application: https://raw.githubusercontent.com/MikiWolfe/Note-Taker/main/screenshot.png

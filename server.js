@@ -57,13 +57,13 @@ app.post("/api/notes", (req, res) => {
       body: newNote,
     };
 
-    // console.log(response);
     res.status(201).json(response);
   } else {
     res.status(500).json("Error in posting note");
   }
 });
 
+// DELETE request
 app.delete("/api/notes/:id", (req, res) => {
   let noteJson = JSON.parse(
     fs.readFileSync(path.join(__dirname, "/db/db.json"))
