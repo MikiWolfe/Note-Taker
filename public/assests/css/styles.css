@@ -4,12 +4,8 @@ body {
   margin: 0;
   padding: 0;
 }
-h1{
-  text-align: center;
-}
-h3{
-  text-align: center;
-}
+
+
 .save-note {
   display: none;
 }
@@ -82,9 +78,3 @@ h3{
   cursor: pointer;
 }
 
-.img {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  width: 400px;
-}
