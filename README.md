@@ -1,7 +1,7 @@
 # Note-Taker
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description: 
-An application that writes and save notes using Express.js to help with productivity and reminders. 
+An application that writes and save notes using Express.js to help with productivity and reminders. Users can click on a note to view them at any time. Notes can be deleted once they are complete. 
 Repository name: Note-Taker
 
 ## Table of Contents:
@@ -15,7 +15,7 @@ Repository name: Note-Taker
 ## Installation 
 ```npm i on package.json file```
 ## Usage
-Keeping the user organized with notes and tasks to assist in helping them through out their day and week 
+Assisting the user to remain more organized keeping their notes in one place.   
 ## Licensing
 2023 Mikayla B
 Copyright Permission is hereby granted, free of charge, 
@@ -39,7 +39,6 @@ None
 ## Tests
 None
 ## Questions
-Please reach out if you have any questions about this application:
 GitHub profile: https://github.com/MikiWolfe
 
 ### Link to Deployed Site
