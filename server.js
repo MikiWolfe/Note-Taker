@@ -23,12 +23,12 @@ app.get("/notes", (req, res) =>
 
 app.get("/api/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "/db/db.json"));
-  console.log(`${req.method} request received to get notes`);
+  console.log(`${req.method} request received to get notes.`)
 });
 
 // POST request
 app.post("/api/notes", (req, res) => {
-  console.log(`${req.method} request received to add a note`);
+  console.log(`${req.method} request received to add a note.`);
   let notePast = JSON.parse(
     fs.readFileSync(path.join(__dirname, "/db/db.json"))
   );
@@ -49,7 +49,7 @@ app.post("/api/notes", (req, res) => {
     fs.writeFile("./db/db.json", combinedNotes, "utf8", (err) =>
       err
         ? console.error(err)
-        : console.log(`Note for ${newNote.title} had been written to JSON file`)
+        : console.log(`Note for ${newNote.title} had been written to JSON file.`)
     );
 
     const response = {
@@ -69,9 +69,9 @@ app.delete("/api/notes/:id", (req, res) => {
     fs.readFileSync(path.join(__dirname, "/db/db.json"))
   );
   let noteId = req.params.id;
-  console.log(noteJson);
+ 
   noteJson = noteJson.filter((note) => note.id !== noteId);
-
+ console.log("Note has been deleted.");
   fs.writeFileSync(
     path.join(__dirname, "/db/db.json"),
     JSON.stringify(noteJson, null, 4)
