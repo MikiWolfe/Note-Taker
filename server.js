@@ -71,7 +71,7 @@ app.delete("/api/notes/:id", (req, res) => {
   let noteId = req.params.id;
  
   noteJson = noteJson.filter((note) => note.id !== noteId);
- console.log("Note has been deleted.");
+ console.log(`${req.method} request received to delete note.`);
   fs.writeFileSync(
     path.join(__dirname, "/db/db.json"),
     JSON.stringify(noteJson, null, 4)
